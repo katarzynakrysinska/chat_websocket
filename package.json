@@ -1,0 +1,8 @@
+{
+  "name": "chat_websocket",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/katarzynakrysinska/chat_websocket.git",
+  "author": "Kasia Krysińska <katarzyna.krysinska@onet.pl>",
+  "license": "MIT"
+}
