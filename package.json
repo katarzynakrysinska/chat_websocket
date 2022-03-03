@@ -6,9 +6,11 @@
   "author": "Kasia Krysińska <katarzyna.krysinska@onet.pl>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.3"
+    "socket.io": "2.2.0"
   },
   "devDependencies": {
+    "@types/socket.io": "^3.0.2",
+    "express": "^4.17.3",
     "nodemon": "^2.0.15"
   },
   "scripts": {

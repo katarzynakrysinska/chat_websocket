@@ -11,6 +11,9 @@ const
 
 let userName;
 
+const socket = io();
+socket.on('message', ({ author, content }) => addMessage(author, content))
+
 loginForm.addEventListener('submit', login);
 addMessageForm.addEventListener('submit', sendMessage);
 
@@ -28,16 +31,18 @@ function login(event) {
   }
 }
 
-function sendMessage(event) {
-  event.preventDefault();
+function sendMessage(e) {
+  e.preventDefault();
 
-  let message = messageContentInput.value;
+  let messageContent = messageContentInput.value;
 
-  if (message) {
-    addMessage(userName, message);
-    messageContentInput.value= '';
-  } else {
-    alert('Nothing to say?')
+  if(!messageContent.length) {
+    alert('You have to type something!');
+  }
+  else {
+    addMessage(userName, messageContent);
+    socket.emit('message', { author: userName, content: messageContent })
+    messageContentInput.value = '';
   }
 }
 
